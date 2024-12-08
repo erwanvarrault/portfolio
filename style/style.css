@@ -1,0 +1,322 @@
+/* Gestion du mode sombre */
+
+:root { /* Commun à toute la page */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: #f8f9fa;
+    --btn-bg: rgba(228, 27, 27, 0.82);
+}
+
+body {
+    background-color: var(--bg-color); /* Couleur définie sur des variables */
+    color: var(--text-color);
+}
+
+header, footer, .card, #contact-form {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.dark-mode #projets {
+    background-color: #262626 !important
+} 
+
+body.dark-mode #menu {
+    background-color: rgba(51, 51, 51, 0.9); /* Changement de la couleur du menu en mode sombre */
+}
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: rgba(0, 0, 0, 0.9);
+    --card-bg: #1e1e1e;
+    --btn-bg: rgba(255, 87, 34, 0.82);
+}
+
+body.dark-mode #logo {
+    filter: brightness(2); /* Le logo est rendu plus clair en mode sombre pour qu'il soit plus visible */
+}
+
+body.dark-mode #titreBienvenue {
+    color: #c31919;
+}
+
+body.dark-mode #texteDeveloppeur {
+    color: var(--text-color);
+}
+
+body.dark-mode header {
+    background-color: var(--header-bg);
+}
+
+body.dark-mode .card {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode button {
+    background-color: var(--btn-bg);
+}
+
+body.dark-mode a.nav-link {
+    color: var(--text-color);
+}
+
+
+
+/* Polices */
+@font-face { /* Polices personalisées */
+    font-family: 'SFsh';
+    src: url('../fonts/SF-Pro-Display-Heavy.otf') format('opentype');
+    font-weight: normal; 
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'SFsb';
+    src: url('../fonts/SF-Pro-Display-Semibold.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'SFm';
+    src: url('../fonts/SF-Pro-Display-Medium.otf') format('opentype'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'SFr';
+    src: url('../fonts/SF-Pro-Display-Regular.otf') format('opentype'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+@font-face {
+    font-family: 'SFl';
+    src: url('../fonts/SF-Pro-Display-Light.otf') format('opentype'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+.fontSFh {
+    font-family: 'SFh' !important;
+}
+.fontSFsb {
+    font-family: 'SFsb' !important;
+}
+.fontSFm {
+    font-family: 'SFm' !important;
+}
+.fontSFr {
+    font-family: 'SFr' !important;
+}
+.fontSFl {
+    font-family: 'SFl' !important;
+}
+
+
+
+
+
+/* Menu */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+}
+
+#logo {
+    height: 40px;
+}
+
+#menu {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9); /* Légèrement transparent */
+    backdrop-filter: blur(10px); /* Applique le flou de fond */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité avec Safari */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header ul {
+    display: flex; /* Affichage en ligne */
+    list-style: none;
+    cursor: pointer; /* Changement du curseur au survol */
+}
+
+header li {
+    margin: 0 10px;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: underline; /* Active le sous-lignage */
+    text-decoration-color: rgba(228, 27, 27, 0.82);
+    text-decoration-thickness: 2px; /* Épaisseur de la ligne */
+    text-underline-offset: 3px; 
+}
+
+.nav-link:hover {
+    color: rgba(228, 27, 27, 0.82);
+}
+
+header a {
+    color: #fff;
+    text-decoration: none; /* Enlever les eventuels effets du navigateur */
+}
+
+#accueil {
+    text-align: left;
+}
+
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+/* Global */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Lignes plus espacées */
+}
+
+input:focus, textarea:focus {
+    outline: none !important; /* Eviter le cadre bleu de certains navigateurs */
+    box-shadow: none !important;
+    border: 1px solid rgba(228, 27, 27, 0.82) !important;
+}
+
+button {
+    background-color: rgba(228, 27, 27, 0.82) !important;
+    border: none !important;
+    color: white !important;
+}
+button:hover {
+    background-color: rgba(228, 27, 27, 1) !important;
+    border: none !important;
+}
+
+.margeTop {
+    margin-top: 140px;
+}
+
+.soustitre {
+    font-family: 'SFm';
+}
+
+.sectionRouge {
+    background-color: rgba(233, 75, 77, 0.75) !important
+}
+.texteBlanc {
+    color: white;
+    font-family: 'SFr' !important;
+}
+
+
+
+
+/* Elements */
+
+#titreBienvenue {
+    color: black;
+    font-size: 4.7em;
+    padding-left: 35px;
+}
+
+#texteDeveloppeur {
+    color: black;
+    font-size: 1.4em;
+    padding-left: 33px;
+    line-height: 1.3em;
+}
+
+#photo {
+    width: 120px;
+    height: 120px;
+    margin-left: 40px;
+    transform: rotate(-5deg);
+    box-shadow: 
+                0 0 10px rgba(155, 155, 155, 0.6), 
+                0 0 20px rgba(155, 155, 155, 0.5), 
+                0 0 40px rgba(155, 155, 155, 0.4); /* Degradé de l'ombre */
+}
+
+#cv {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 42px;
+    color: white;
+    background-color: rgba(228, 27, 27, 0.82) !important;
+    border: none !important;
+    color: white !important;
+}
+
+cv:hover {
+    background-color: rgba(228, 27, 27, 1) !important;
+    border: none !important;
+}
+
+.competence {
+    margin: 0;
+    margin-right: 7px;
+}
+
+.cbRose {
+    margin-left: 5px;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(228, 27, 134, 0.82);
+    border-radius: 100px;
+}
+.cbRouge {
+    margin-left: 5px;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(228, 27, 27, 0.82);
+    border-radius: 100px;
+}
+.cbOrange {
+    margin-left: 5px;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(228, 127, 27, 0.82);
+    border-radius: 100px;
+}
+.cbJaune {
+    margin-left: 5px;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(228, 177, 27, 0.82);
+    border-radius: 100px;
+}
+.cbGris {
+    margin-left: 5px;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(129, 129, 129, 0.82);
+    border-radius: 100px;
+}
+#ligneCompetences {
+    justify-content: right;
+    align-items: center;
+    height: 35px;
+    transform: translateX(-45%); /* Décaler de 45% de sa largeur l'élément */
+}
+
+.imgCompetences {
+    height: 25px;
+    padding-right: 10px;
+}
+
+#descriptionLongue {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'SFr';
+    font-size: 18px;
+}
